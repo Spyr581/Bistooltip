@@ -1760,7 +1760,7 @@ Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][9] = { ["slot_name"] = "Legs", 
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32220 }, { ["type"] = "item", ["id"] = 32206 } }, [1] = 32366, [2] = 28545, [3] = 30891, [4] = 30039, [5] = 25686, [6] = 30060 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 32497, [2] = 29301, [3] = 32266, [4] = 30052, [5] = 29997, [6] = 28757 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 28830, [2] = 30450, [3] = 32505, [4] = 32492, [5] = 30627, [6] = 29383 }
-Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
+Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32837, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 32369, [3] = 33734, [4] = 32027, [5] = 28307, [6] = 28189 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["T6"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 29949, [2] = 30724, [3] = 29152, [4] = 32326, [5] = 28772, [6] = 28504 }
 
@@ -1776,7 +1776,7 @@ Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][9] = { ["slot_name"] = "Legs"
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32220 }, { ["type"] = "item", ["id"] = 32206 } }, [1] = 32366, [2] = 28545, [3] = 30891, [4] = 30039, [5] = 25686, [6] = 30060 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 32497, [2] = 29301, [3] = 32266, [4] = 30052, [5] = 29997, [6] = 28757 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 28830, [2] = 30450, [3] = 32505, [4] = 32492, [5] = 30627, [6] = 29383 }
-Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
+Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32837, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 32369, [3] = 33734, [4] = 32027, [5] = 28307, [6] = 28189 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["T6"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 29949, [2] = 30724, [3] = 29152, [4] = 32326, [5] = 28772, [6] = 28504 }
 
@@ -1903,7 +1903,7 @@ Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][9] = { ["slot_name"] = "Legs", 
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32217 }, { ["type"] = "item", ["id"] = 32217 } }, [1] = 32345, [2] = 32366, [3] = 32510, [4] = 30081, [5] = 30039, [6] = 33482 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 32497, [2] = 32335, [3] = 32526, [4] = 29997, [5] = 33919, [6] = 30738 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 32505, [2] = 28830, [3] = 30446, [4] = 30627, [5] = 29383, [6] = 31856 }
-Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 33762, [3] = 32262, [4] = 30881, [5] = 28439, [6] = 29996 }
+Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32837, [2] = 33762, [3] = 32262, [4] = 30881, [5] = 28439, [6] = 29996 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 33762, [3] = 32262, [4] = 30881, [5] = 32052, [6] = 30082 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["T6"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 30105, [2] = 28772, [3] = 32326, [4] = 30279, [5] = 28581, [6] = 30724 }
 
@@ -2188,7 +2188,7 @@ Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][9] = { ["slot_name"] = "Legs", 
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32220 }, { ["type"] = "item", ["id"] = 32206 } }, [1] = 32366, [2] = 33222, [3] = 28545, [4] = 30891, [5] = 30039, [6] = 25686 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 33496, [2] = 32497, [3] = 29301, [4] = 32266, [5] = 30052, [6] = 29997 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 28830, [2] = 30450, [3] = 33831, [4] = 32505, [5] = 32492, [6] = 30627 }
-Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
+Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32837, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 32369, [3] = 33734, [4] = 32027, [5] = 28307, [6] = 28189 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["ZA"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 29949, [2] = 33474, [3] = 30724, [4] = 29152, [5] = 33491, [6] = 32326 }
 
@@ -2204,7 +2204,7 @@ Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][9] = { ["slot_name"] = "Legs"
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32220 }, { ["type"] = "item", ["id"] = 32206 } }, [1] = 32366, [2] = 33222, [3] = 28545, [4] = 30891, [5] = 30039, [6] = 25686 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 33496, [2] = 32497, [3] = 29301, [4] = 32266, [5] = 30052, [6] = 29997 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 28830, [2] = 30450, [3] = 33831, [4] = 32505, [5] = 32492, [6] = 30627 }
-Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
+Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32837, [2] = 33762, [3] = 30082, [4] = 30881, [5] = 28439, [6] = 32946 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 32369, [3] = 33734, [4] = 32027, [5] = 28307, [6] = 28189 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["ZA"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 29949, [2] = 33474, [3] = 30724, [4] = 29152, [5] = 33491, [6] = 32326 }
 
@@ -2331,7 +2331,7 @@ Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][9] = { ["slot_name"] = "Legs", 
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32217 }, { ["type"] = "item", ["id"] = 32217 } }, [1] = 32345, [2] = 32366, [3] = 32510, [4] = 33222, [5] = 30081, [6] = 30039 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 32497, [2] = 33496, [3] = 32335, [4] = 32526, [5] = 29997, [6] = 33919 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 33831, [2] = 28830, [3] = 30446, [4] = 32505, [5] = 30627, [6] = 29383 }
-Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 42974 } }, [1] = 32838, [2] = 33762, [3] = 32262, [4] = 30881, [5] = 28439, [6] = 29996 }
+Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 42974 } }, [1] = 32837, [2] = 33762, [3] = 32262, [4] = 30881, [5] = 28439, [6] = 29996 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 33762, [3] = 32262, [4] = 30881, [5] = 32052, [6] = 30082 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["ZA"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 33474, [2] = 30105, [3] = 28772, [4] = 32326, [5] = 30279, [6] = 28581 }
 
@@ -2616,7 +2616,7 @@ Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][9] = { ["slot_name"] = "Legs",
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32220 } }, [1] = 34575, [2] = 33222, [3] = 32366, [4] = 28545, [5] = 30891, [6] = 30039 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 32497, [2] = 34189, [3] = 34361, [4] = 34887, [5] = 33496, [6] = 29301 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 28830, [2] = 34427, [3] = 34472, [4] = 30450, [5] = 33831, [6] = 32505 }
-Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 34331, [3] = 34214, [4] = 35101, [5] = 33762, [6] = 30082 }
+Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32837, [2] = 34331, [3] = 34214, [4] = 35101, [5] = 33762, [6] = 30082 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 32369, [3] = 34164, [4] = 35072, [5] = 33734, [6] = 32027 }
 Bistooltip_tbc_bislists["Rogue"]["Combat"]["SWP"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 34196, [2] = 34334, [3] = 34892, [4] = 34349, [5] = 29949, [6] = 33474 }
 
@@ -2632,7 +2632,7 @@ Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][9] = { ["slot_name"] = "Legs
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32220 } }, [1] = 34575, [2] = 33222, [3] = 32366, [4] = 28545, [5] = 30891, [6] = 30039 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 32497, [2] = 34189, [3] = 34361, [4] = 34887, [5] = 33496, [6] = 29301 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 28830, [2] = 34427, [3] = 34472, [4] = 30450, [5] = 33831, [6] = 32505 }
-Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 34331, [3] = 34214, [4] = 35101, [5] = 33762, [6] = 30082 }
+Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32837, [2] = 34331, [3] = 34214, [4] = 35101, [5] = 33762, [6] = 30082 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 32369, [3] = 34164, [4] = 35072, [5] = 33734, [6] = 32027 }
 Bistooltip_tbc_bislists["Rogue"]["Subtlety"]["SWP"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 34196, [2] = 34334, [3] = 34892, [4] = 34349, [5] = 29949, [6] = 33474 }
 
@@ -2759,7 +2759,7 @@ Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][9] = { ["slot_name"] = "Legs",
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 34007 }, { ["type"] = "item", ["id"] = 32217 } }, [1] = 34569, [2] = 32345, [3] = 32366, [4] = 32510, [5] = 33222, [6] = 30081 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 34189, [2] = 34887, [3] = 34361, [4] = 33496, [5] = 32497, [6] = 32335 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 34427, [2] = 28830, [3] = 30446, [4] = 34472, [5] = 33831, [6] = 32505 }
-Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 42974 } }, [1] = 32838, [2] = 34331, [3] = 35101, [4] = 33762, [5] = 32262, [6] = 30881 }
+Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 42974 } }, [1] = 32837, [2] = 34331, [3] = 35101, [4] = 33762, [5] = 32262, [6] = 30881 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 27984 } }, [1] = 32838, [2] = 34346, [3] = 35101, [4] = 34951, [5] = 33762, [6] = 32262 }
 Bistooltip_tbc_bislists["Warrior"]["Fury"]["SWP"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 34196, [2] = 34334, [3] = 33474, [4] = 34349, [5] = 34892, [6] = 30105 }
 

@@ -77,6 +77,7 @@ Bistooltip_spec_icons = {
         ["classIcon"] = "Interface\\Icons\\Achievement_Warrior_ClassIcon",
         ["Arms"] = "Interface\\Icons\\Ability_Warrior_SavageBlow",
         ["Fury"] = "Interface\\Icons\\Ability_Warrior_InnerRage",
+        ["Fury-Prot"] = "Interface\\Icons\\Ability_Warrior_InnerRage",
         ["Protection"] = "Interface\\Icons\\Ability_Warrior_DefensiveStance"
     }
 }

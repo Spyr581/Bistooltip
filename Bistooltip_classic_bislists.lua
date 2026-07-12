@@ -152,6 +152,14 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["P3"] = {};
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P4"] = {};
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P5"] = {};
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P6"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"] = {};
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"] = {};
 
 Bistooltip_classic_phases = { "PR", "P1", "P2", "P3", "P4", "P5", "P6" };
 
@@ -164,7 +172,7 @@ Bistooltip_classic_classes[5] = { ["name"] = "Priest", ["specs"] = { [1] = "Holy
 Bistooltip_classic_classes[6] = { ["name"] = "Rogue", ["specs"] = { [1] = "Combat" } };
 Bistooltip_classic_classes[7] = { ["name"] = "Shaman", ["specs"] = { [1] = "Elemental", [2] = "Enhancement", [3] = "Restoration" } };
 Bistooltip_classic_classes[8] = { ["name"] = "Warlock", ["specs"] = { [1] = "Affliction", [2] = "Destruction" } };
-Bistooltip_classic_classes[9] = { ["name"] = "Warrior", ["specs"] = { [1] = "Fury" } };
+Bistooltip_classic_classes[9] = { ["name"] = "Warrior", ["specs"] = { [1] = "Fury", [2] = "Fury-Prot" } };
 
 Bistooltip_classic_bislists["Druid"]["Balance"]["PR"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 11645 } }, [1] = 18727, [2] = 14332, [3] = 15999, [4] = 12752, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["PR"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 22403, [2] = 12103, [3] = 22149, [4] = 14558, [5] = 1443, [6] = -1 }
@@ -301,7 +309,7 @@ Bistooltip_classic_bislists["Paladin"]["Retribution"]["PR"][9] = { ["slot_name"]
 Bistooltip_classic_bislists["Paladin"]["Retribution"]["PR"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 20020 } }, [1] = 14616, [2] = 10385, [3] = 12555, [4] = 13967, [5] = 11731, [6] = 13210 }
 Bistooltip_classic_bislists["Paladin"]["Retribution"]["PR"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 13098, [2] = 17713, [3] = 12017, [4] = 12548, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Paladin"]["Retribution"]["PR"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 13965, [2] = 11815, [3] = 12930, [4] = 11832, [5] = -1, [6] = -1 }
-Bistooltip_classic_bislists["Paladin"]["Retribution"]["PR"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12784, [2] = 2801, [3] = 13285, [4] = -1, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Paladin"]["Retribution"]["PR"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12784, [2] = 2801, [3] = 13285, [4] = 13982, [5] = 18420, [6] = 12796 }
 
 Bistooltip_classic_bislists["Priest"]["Holy"]["PR"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 11645 } }, [1] = 18727, [2] = 14332, [3] = 13102, [4] = 2721, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Priest"]["Holy"]["PR"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18723, [2] = 22149, [3] = 14558, [4] = 1443, [5] = 13960, [6] = -1 }
@@ -378,7 +386,7 @@ Bistooltip_classic_bislists["Shaman"]["Enhancement"]["PR"][9] = { ["slot_name"] 
 Bistooltip_classic_bislists["Shaman"]["Enhancement"]["PR"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 14616, [2] = 13210, [3] = 13967, [4] = 10270, [5] = 11731, [6] = -1 }
 Bistooltip_classic_bislists["Shaman"]["Enhancement"]["PR"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 13098, [2] = 17713, [3] = 12017, [4] = -1, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Shaman"]["Enhancement"]["PR"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 13965, [2] = 11815, [3] = 19120, [4] = 12930, [5] = -1, [6] = -1 }
-Bistooltip_classic_bislists["Shaman"]["Enhancement"]["PR"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12784, [2] = 18420, [3] = 12796, [4] = 13372, [5] = 11931, [6] = -1 }
+Bistooltip_classic_bislists["Shaman"]["Enhancement"]["PR"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12784, [2] = 18420, [3] = 12796, [4] = 13372, [5] = 11931, [6] = 18759 }
 
 Bistooltip_classic_bislists["Shaman"]["Restoration"]["PR"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 11645 } }, [1] = 12960, [2] = 15684, [3] = 13102, [4] = -1, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Shaman"]["Restoration"]["PR"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18723, [2] = 22149, [3] = 13141, [4] = 22403, [5] = -1, [6] = -1 }
@@ -439,9 +447,25 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][9] = { ["slot_name"] = "Leg
 Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 20020 } }, [1] = 14616, [2] = 12555, [3] = 14978, [4] = 13210, [5] = 13967, [6] = -1 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 17713, [2] = 13098, [3] = 12017, [4] = 12548, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 11815, [2] = 13965, [3] = 19120, [4] = 13515, [5] = -1, [6] = -1 }
-Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12940, [2] = 6622, [3] = 1728, [4] = 2244, [5] = 13286, [6] = -1 }
-Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12939, [2] = 13368, [3] = 12783, [4] = 15806, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12940, [2] = 6622, [3] = 1728, [4] = 2244, [5] = 13286, [6] = 12798 }
+Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12939, [2] = 13368, [3] = 12783, [4] = 15806, [5] = 18737, [6] = 13015 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["PR"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 12653, [2] = 12651, [3] = 13039, [4] = 10624, [5] = -1, [6] = -1 }
+
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 11645 } }, [1] = 12640, [2] = 13404, [3] = 12587, [4] = 13359, [5] = 11735, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 15411, [2] = 22150, [3] = 11933, [4] = 17044, [5] = 12059, [6] = 13089 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 18182 } }, [1] = 16733, [2] = 12927, [3] = 35374, [4] = 15051, [5] = 11874, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][4] = { ["slot_name"] = "Back", ["enhs"] = { { ["type"] = "spell", ["id"] = 25083 } }, [1] = 13397, [2] = 13340, [3] = 11626, [4] = 18689, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][5] = { ["slot_name"] = "Chest", ["enhs"] = { { ["type"] = "spell", ["id"] = 20025 } }, [1] = 11726, [2] = 12895, [3] = 14637, [4] = 12757, [5] = 13944, [6] = 11926 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][6] = { ["slot_name"] = "Wrist", ["enhs"] = { { ["type"] = "spell", ["id"] = 20011 } }, [1] = 12936, [2] = 12966, [3] = 13211, [4] = 13400, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][7] = { ["slot_name"] = "Hands", ["enhs"] = { { ["type"] = "spell", ["id"] = 13887 } }, [1] = 13963, [2] = 14551, [3] = 15063, [4] = 21278, [5] = 13957, [6] = 14640 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][8] = { ["slot_name"] = "Waist", ["enhs"] = { }, [1] = 13142, [2] = 13959, [3] = 11686, [4] = 12634, [5] = 13252, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][9] = { ["slot_name"] = "Legs", ["enhs"] = { }, [1] = 16732, [2] = 14554, [3] = 15062, [4] = 18736, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 14616, [2] = 13967, [3] = 12555, [4] = 13210, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 13098, [2] = 17713, [3] = 12548, [4] = 2246, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 11815, [2] = 13965, [3] = 19120, [4] = 13966, [5] = -1, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 12940, [2] = 12798, [3] = 1728, [4] = 12783, [5] = 2244, [6] = 13006 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20017 } }, [1] = 12602, [2] = 18696, [3] = 16998, [4] = 18673, [5] = 14002, [6] = 12939 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["PR"][15] = { ["slot_name"] = "Relic", ["enhs"] = { { ["type"] = "item", ["id"] = 10548 } }, [1] = 12651, [2] = 12653, [3] = 13039, [4] = 10624, [5] = -1, [6] = -1 }
 
 Bistooltip_classic_bislists["Druid"]["Balance"]["P1"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 11645 } }, [1] = 18727, [2] = 14332, [3] = 15999, [4] = 12752, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P1"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18814, [2] = 22403, [3] = 17109, [4] = 12103, [5] = 22149, [6] = 14558 }
@@ -720,6 +744,22 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["P1"][13] = { ["slot_name"] = "We
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P1"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 18805, [2] = 18832, [3] = 18816, [4] = 17075, [5] = 12939, [6] = 17068 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P1"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 17069, [2] = 12651, [3] = 12653, [4] = 17072, [5] = 18282, [6] = 13039 }
 
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][1] = { ["slot_name"] = "Head", ["enhs"] = { }, [1] = 12640, [2] = 18817, [3] = 49479, [4] = 16866, [5] = 13404, [6] = 12587 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18404, [2] = 15411, [3] = 17065, [4] = 18205, [5] = 22150, [6] = 11933 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 18182 } }, [1] = 16868, [2] = 16733, [3] = 12927, [4] = 35374, [5] = 15051, [6] = 11874 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][4] = { ["slot_name"] = "Back", ["enhs"] = { { ["type"] = "spell", ["id"] = 25083 } }, [1] = 17102, [2] = 13397, [3] = 17107, [4] = 13340, [5] = 11626, [6] = 18689 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][5] = { ["slot_name"] = "Chest", ["enhs"] = { { ["type"] = "spell", ["id"] = 20025 } }, [1] = 11726, [2] = 12895, [3] = 16865, [4] = 14637, [5] = 12757, [6] = 13944 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][6] = { ["slot_name"] = "Wrist", ["enhs"] = { { ["type"] = "spell", ["id"] = 20011 } }, [1] = 18812, [2] = 16861, [3] = 12936, [4] = 19146, [5] = 12966, [6] = 13211 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][7] = { ["slot_name"] = "Hands", ["enhs"] = { { ["type"] = "spell", ["id"] = 13887 } }, [1] = 18823, [2] = 14551, [3] = 16863, [4] = 19143, [5] = 13963, [6] = 15063 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][8] = { ["slot_name"] = "Waist", ["enhs"] = { }, [1] = 19137, [2] = 13142, [3] = 13959, [4] = 16864, [5] = 11686, [6] = 12634 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][9] = { ["slot_name"] = "Legs", ["enhs"] = { }, [1] = 16962, [2] = 14554, [3] = 16867, [4] = 15062, [5] = 16732, [6] = 18736 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 16862, [2] = 14616, [3] = 13967, [4] = 12555, [5] = 13210, [6] = 18806 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 18821, [2] = 17063, [3] = 17713, [4] = 13098, [5] = 12548, [6] = 2246 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 11815, [2] = 13965, [3] = 19120, [4] = 18406, [5] = 18815, [6] = 13966 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 18816, [2] = 18832, [3] = 18805, [4] = 17071, [5] = 17075, [6] = 17068 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20017 } }, [1] = 17066, [2] = 12602, [3] = 18168, [4] = 18696, [5] = 16998, [6] = 18673 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P1"][15] = { ["slot_name"] = "Relic", ["enhs"] = { { ["type"] = "item", ["id"] = 10548 } }, [1] = 17072, [2] = 17069, [3] = 12651, [4] = 18282, [5] = 12653, [6] = 13039 }
+
 Bistooltip_classic_bislists["Druid"]["Balance"]["P2"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 18330 } }, [1] = 18727, [2] = 14332, [3] = 15999, [4] = 12752, [5] = -1, [6] = -1 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P2"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18814, [2] = 22403, [3] = 17109, [4] = 12103, [5] = 22149, [6] = 18317 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P2"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 18182 } }, [1] = 18681, [2] = 14335, [3] = 11624, [4] = 23254, [5] = 18528, [6] = 13013 }
@@ -996,6 +1036,22 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["P2"][12] = { ["slot_name"] = "Tr
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P2"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 18832, [2] = 17112, [3] = 17068, [4] = 17075, [5] = 18203, [6] = 18816 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P2"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 18805, [2] = 18832, [3] = 18816, [4] = 17075, [5] = 12939, [6] = 17068 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P2"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 17069, [2] = 19107, [3] = 12651, [4] = 18323, [5] = 12653, [6] = 17072 }
+
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][1] = { ["slot_name"] = "Head", ["enhs"] = { }, [1] = 12640, [2] = 18817, [3] = 49479, [4] = 16866, [5] = 13404, [6] = 12587 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18404, [2] = 15411, [3] = 17065, [4] = 18205, [5] = 22150, [6] = 11933 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 18182 } }, [1] = 16868, [2] = 16733, [3] = 12927, [4] = 35374, [5] = 15051, [6] = 11874 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][4] = { ["slot_name"] = "Back", ["enhs"] = { { ["type"] = "spell", ["id"] = 25083 } }, [1] = 17102, [2] = 18541, [3] = 13397, [4] = 17107, [5] = 13340, [6] = 11626 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][5] = { ["slot_name"] = "Chest", ["enhs"] = { { ["type"] = "spell", ["id"] = 20025 } }, [1] = 11726, [2] = 12895, [3] = 16865, [4] = 14637, [5] = 12757, [6] = 13944 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][6] = { ["slot_name"] = "Wrist", ["enhs"] = { { ["type"] = "spell", ["id"] = 20011 } }, [1] = 18812, [2] = 19581, [3] = 16861, [4] = 12936, [5] = 19146, [6] = 12966 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][7] = { ["slot_name"] = "Hands", ["enhs"] = { { ["type"] = "spell", ["id"] = 13887 } }, [1] = 18823, [2] = 14551, [3] = 16863, [4] = 19143, [5] = 13963, [6] = 18544 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][8] = { ["slot_name"] = "Waist", ["enhs"] = { }, [1] = 19137, [2] = 13142, [3] = 13959, [4] = 16864, [5] = 11686, [6] = 18547 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][9] = { ["slot_name"] = "Legs", ["enhs"] = { }, [1] = 16962, [2] = 18380, [3] = 14554, [4] = 16867, [5] = 15062, [6] = 16732 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 16862, [2] = 14616, [3] = 13967, [4] = 12555, [5] = 13210, [6] = 18806 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 18821, [2] = 17063, [3] = 19325, [4] = 17713, [5] = 18500, [6] = 13098 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 11815, [2] = 13965, [3] = 19120, [4] = 18406, [5] = 18537, [6] = 18815 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 18816, [2] = 18832, [3] = 18805, [4] = 17071, [5] = 17075, [6] = 17068 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20017 } }, [1] = 17066, [2] = 19321, [3] = 12602, [4] = 18168, [5] = 18696, [6] = 16998 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P2"][15] = { ["slot_name"] = "Relic", ["enhs"] = { { ["type"] = "item", ["id"] = 10548 } }, [1] = 17072, [2] = 17069, [3] = 18323, [4] = 12651, [5] = 18282, [6] = 19107 }
 
 Bistooltip_classic_bislists["Druid"]["Balance"]["P3"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 18330 } }, [1] = 19375, [2] = 14332, [3] = 18727, [4] = 15999, [5] = 12752, [6] = -1 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P3"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18814, [2] = 22403, [3] = 17109, [4] = 12103, [5] = 22149, [6] = 18317 }
@@ -1274,6 +1330,22 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["P3"][13] = { ["slot_name"] = "We
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P3"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 19352, [2] = 19363, [3] = 19346, [4] = 19362, [5] = 18832, [6] = 18805 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P3"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 17069, [2] = 19350, [3] = 19107, [4] = 12651, [5] = 18323, [6] = 12653 }
 
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][1] = { ["slot_name"] = "Head", ["enhs"] = { }, [1] = 19372, [2] = 12640, [3] = 18817, [4] = 49479, [5] = 16866, [6] = 13404 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18404, [2] = 19377, [3] = 15411, [4] = 19383, [5] = 17065, [6] = 18205 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 18182 } }, [1] = 19394, [2] = 16961, [3] = 16868, [4] = 16733, [5] = 12927, [6] = 35374 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][4] = { ["slot_name"] = "Back", ["enhs"] = { { ["type"] = "spell", ["id"] = 25083 } }, [1] = 19398, [2] = 18541, [3] = 19436, [4] = 17102, [5] = 13397, [6] = 17107 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][5] = { ["slot_name"] = "Chest", ["enhs"] = { { ["type"] = "spell", ["id"] = 20025 } }, [1] = 11726, [2] = 19405, [3] = 12895, [4] = 16865, [5] = 14637, [6] = 12757 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][6] = { ["slot_name"] = "Wrist", ["enhs"] = { { ["type"] = "spell", ["id"] = 20011 } }, [1] = 18812, [2] = 19581, [3] = 16959, [4] = 16861, [5] = 12936, [6] = 19146 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][7] = { ["slot_name"] = "Hands", ["enhs"] = { { ["type"] = "spell", ["id"] = 13887 } }, [1] = 14551, [2] = 16863, [3] = 18823, [4] = 19143, [5] = 16964, [6] = 13963 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][8] = { ["slot_name"] = "Waist", ["enhs"] = { }, [1] = 19137, [2] = 19380, [3] = 13142, [4] = 13959, [5] = 16960, [6] = 16864 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][9] = { ["slot_name"] = "Legs", ["enhs"] = { }, [1] = 19402, [2] = 22651, [3] = 18380, [4] = 14554, [5] = 16962, [6] = 16867 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 19387, [2] = 16862, [3] = 14616, [4] = 16965, [5] = 13967, [6] = 12555 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 18821, [2] = 17063, [3] = 19384, [4] = 19432, [5] = 19325, [6] = 19376 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 20130, [2] = 11815, [3] = 19406, [4] = 13965, [5] = 19120, [6] = 18406 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 19019, [2] = 19352, [3] = 19363, [4] = 19351, [5] = 18832, [6] = 18816 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20017 } }, [1] = 19349, [2] = 17066, [3] = 19321, [4] = 12602, [5] = 18168, [6] = 18696 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P3"][15] = { ["slot_name"] = "Relic", ["enhs"] = { { ["type"] = "item", ["id"] = 10548 } }, [1] = 17072, [2] = 17069, [3] = 18323, [4] = 19350, [5] = 19368, [6] = 12651 }
+
 Bistooltip_classic_bislists["Druid"]["Balance"]["P4"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 18330 } }, [1] = 19375, [2] = 19886, [3] = 19999, [4] = 14332, [5] = 18727, [6] = 15999 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P4"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18814, [2] = 19613, [3] = 19923, [4] = 22403, [5] = 17109, [6] = 19876 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P4"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 20078 } }, [1] = 19370, [2] = 14335, [3] = 18681, [4] = 11624, [5] = 23254, [6] = 18528 }
@@ -1550,6 +1622,22 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["P4"][12] = { ["slot_name"] = "Tr
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P4"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 19363, [2] = 19352, [3] = 19351, [4] = 17112, [5] = 18832, [6] = 17068 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P4"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 19352, [2] = 19363, [3] = 19346, [4] = 19362, [5] = 18832, [6] = 18805 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P4"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 17069, [2] = 19853, [3] = 19350, [4] = 19107, [5] = 12651, [6] = 18323 }
+
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][1] = { ["slot_name"] = "Head", ["enhs"] = { }, [1] = 19372, [2] = 12640, [3] = 18817, [4] = 49479, [5] = 16866, [6] = 13404 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18404, [2] = 19856, [3] = 19377, [4] = 15411, [5] = 19383, [6] = 17065 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 20077 } }, [1] = 19394, [2] = 16961, [3] = 16868, [4] = 16733, [5] = 12927, [6] = 35374 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][4] = { ["slot_name"] = "Back", ["enhs"] = { { ["type"] = "spell", ["id"] = 25083 } }, [1] = 19398, [2] = 18541, [3] = 19436, [4] = 19907, [5] = 17102, [6] = 13397 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][5] = { ["slot_name"] = "Chest", ["enhs"] = { { ["type"] = "spell", ["id"] = 20025 } }, [1] = 11726, [2] = 21997, [3] = 19904, [4] = 19405, [5] = 19822, [6] = 12895 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][6] = { ["slot_name"] = "Wrist", ["enhs"] = { { ["type"] = "spell", ["id"] = 20011 } }, [1] = 19824, [2] = 19581, [3] = 18812, [4] = 16959, [5] = 16861, [6] = 12936 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][7] = { ["slot_name"] = "Hands", ["enhs"] = { { ["type"] = "spell", ["id"] = 13887 } }, [1] = 14551, [2] = 16863, [3] = 18823, [4] = 19143, [5] = 22714, [6] = 16964 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][8] = { ["slot_name"] = "Waist", ["enhs"] = { }, [1] = 19137, [2] = 19823, [3] = 19380, [4] = 13142, [5] = 13959, [6] = 16960 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][9] = { ["slot_name"] = "Legs", ["enhs"] = { }, [1] = 19402, [2] = 22651, [3] = 19855, [4] = 18380, [5] = 14554, [6] = 16962 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 19387, [2] = 21995, [3] = 16862, [4] = 14616, [5] = 16965, [6] = 13967 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 18821, [2] = 17063, [3] = 19384, [4] = 19432, [5] = 19325, [6] = 19376 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 20130, [2] = 11815, [3] = 19406, [4] = 13965, [5] = 19120, [6] = 18406 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 19019, [2] = 19352, [3] = 19363, [4] = 19866, [5] = 19351, [6] = 18832 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20017 } }, [1] = 19349, [2] = 19862, [3] = 17066, [4] = 19321, [5] = 12602, [6] = 18168 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P4"][15] = { ["slot_name"] = "Relic", ["enhs"] = { { ["type"] = "item", ["id"] = 10548 } }, [1] = 17072, [2] = 17069, [3] = 18323, [4] = 19350, [5] = 19368, [6] = 19853 }
 
 Bistooltip_classic_bislists["Druid"]["Balance"]["P5"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 18330 } }, [1] = 19375, [2] = 22267, [3] = 19886, [4] = 19999, [5] = 14332, [6] = 18727 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P5"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 21608, [2] = 18814, [3] = 21504, [4] = 19613, [5] = 19923, [6] = 22403 }
@@ -1837,6 +1925,22 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["P5"][13] = { ["slot_name"] = "We
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P5"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 21126, [2] = 19352, [3] = 19363, [4] = 21244, [5] = 21520, [6] = 21522 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P5"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 23557, [2] = 17069, [3] = 21459, [4] = 19853, [5] = 19350, [6] = 19107 }
 
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][1] = { ["slot_name"] = "Head", ["enhs"] = { }, [1] = 21329, [2] = 19372, [3] = 12640, [4] = 21455, [5] = 18817, [6] = 49479 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 18404, [2] = 21809, [3] = 21664, [4] = 19856, [5] = 19377, [6] = 15411 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 20077 } }, [1] = 21330, [2] = 19394, [3] = 16961, [4] = 16868, [5] = 16733, [6] = 12927 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][4] = { ["slot_name"] = "Back", ["enhs"] = { { ["type"] = "spell", ["id"] = 25083 } }, [1] = 21710, [2] = 18541, [3] = 21394, [4] = 21701, [5] = 19398, [6] = 19436 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][5] = { ["slot_name"] = "Chest", ["enhs"] = { { ["type"] = "spell", ["id"] = 20025 } }, [1] = 25008, [2] = 21814, [3] = 11726, [4] = 21997, [5] = 19904, [6] = 19405 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][6] = { ["slot_name"] = "Wrist", ["enhs"] = { { ["type"] = "spell", ["id"] = 20011 } }, [1] = 21618, [2] = 21457, [3] = 19581, [4] = 21184, [5] = 19824, [6] = 18812 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][7] = { ["slot_name"] = "Hands", ["enhs"] = { { ["type"] = "spell", ["id"] = 13887 } }, [1] = 21581, [2] = 14551, [3] = 18823, [4] = 16863, [5] = 19143, [6] = 22714 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][8] = { ["slot_name"] = "Waist", ["enhs"] = { }, [1] = 19137, [2] = 19823, [3] = 21692, [4] = 19380, [5] = 13142, [6] = 13959 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][9] = { ["slot_name"] = "Legs", ["enhs"] = { }, [1] = 21332, [2] = 22385, [3] = 22651, [4] = 21495, [5] = 19402, [6] = 19855 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 19387, [2] = 21688, [3] = 21490, [4] = 21995, [5] = 25007, [6] = 16862 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 19432, [2] = 18821, [3] = 17063, [4] = 19384, [5] = 21596, [6] = 19325 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 20130, [2] = 11815, [3] = 21180, [4] = 19406, [5] = 13965, [6] = 21670 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 19019, [2] = 19352, [3] = 19363, [4] = 19866, [5] = 21126, [6] = 21650 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20017 } }, [1] = 19349, [2] = 21269, [3] = 21485, [4] = 19862, [5] = 17066, [6] = 19321 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P5"][15] = { ["slot_name"] = "Relic", ["enhs"] = { { ["type"] = "item", ["id"] = 10548 } }, [1] = 21459, [2] = 17069, [3] = 23557, [4] = 22347, [5] = 17072, [6] = 18323 }
+
 Bistooltip_classic_bislists["Druid"]["Balance"]["P6"][1] = { ["slot_name"] = "Head", ["enhs"] = { { ["type"] = "item", ["id"] = 18330 } }, [1] = 19375, [2] = 23035, [3] = 22267, [4] = 19886, [5] = 19999, [6] = 14332 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P6"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 23057, [2] = 21608, [3] = 18814, [4] = 21504, [5] = 19613, [6] = 19923 }
 Bistooltip_classic_bislists["Druid"]["Balance"]["P6"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 23545 } }, [1] = 22983, [2] = 19370, [3] = 21468, [4] = 14335, [5] = 18681, [6] = 21354 }
@@ -2122,3 +2226,19 @@ Bistooltip_classic_bislists["Warrior"]["Fury"]["P6"][12] = { ["slot_name"] = "Tr
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 23054, [2] = 22816, [3] = 22808, [4] = 19363, [5] = 21244, [6] = 21242 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P6"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 23577, [2] = 22802, [3] = 23242, [4] = 21126, [5] = 22804, [6] = 19352 }
 Bistooltip_classic_bislists["Warrior"]["Fury"]["P6"][15] = { ["slot_name"] = "Relic", ["enhs"] = { }, [1] = 22812, [2] = 17069, [3] = 23557, [4] = 21459, [5] = 22811, [6] = 19853 }
+
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][1] = { ["slot_name"] = "Head", ["enhs"] = { }, [1] = 21329, [2] = 19372, [3] = 12640, [4] = 21455, [5] = 18817, [6] = 49479 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][2] = { ["slot_name"] = "Neck", ["enhs"] = { }, [1] = 23053, [2] = 18404, [3] = 21809, [4] = 21664, [5] = 19856, [6] = 19377 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][3] = { ["slot_name"] = "Shoulder", ["enhs"] = { { ["type"] = "item", ["id"] = 23545 } }, [1] = 21330, [2] = 22419, [3] = 19394, [4] = 16961, [5] = 16868, [6] = 16733 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][4] = { ["slot_name"] = "Back", ["enhs"] = { { ["type"] = "spell", ["id"] = 25083 } }, [1] = 21710, [2] = 18541, [3] = 21394, [4] = 21701, [5] = 23045, [6] = 19398 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][5] = { ["slot_name"] = "Chest", ["enhs"] = { { ["type"] = "spell", ["id"] = 20025 } }, [1] = 25008, [2] = 22416, [3] = 23000, [4] = 21814, [5] = 11726, [6] = 21997 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][6] = { ["slot_name"] = "Wrist", ["enhs"] = { { ["type"] = "spell", ["id"] = 20011 } }, [1] = 22936, [2] = 21618, [3] = 21457, [4] = 19581, [5] = 21184, [6] = 19824 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][7] = { ["slot_name"] = "Hands", ["enhs"] = { { ["type"] = "spell", ["id"] = 13887 } }, [1] = 21581, [2] = 18823, [3] = 14551, [4] = 16863, [5] = 19143, [6] = 22714 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][8] = { ["slot_name"] = "Waist", ["enhs"] = { }, [1] = 23219, [2] = 19137, [3] = 19823, [4] = 21692, [5] = 19380, [6] = 13142 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][9] = { ["slot_name"] = "Legs", ["enhs"] = { }, [1] = 21332, [2] = 22385, [3] = 23068, [4] = 22651, [5] = 21495, [6] = 19402 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][10] = { ["slot_name"] = "Feet", ["enhs"] = { { ["type"] = "spell", ["id"] = 13890 } }, [1] = 19387, [2] = 21688, [3] = 21490, [4] = 21995, [5] = 25007, [6] = 16862 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][11] = { ["slot_name"] = "Finger", ["enhs"] = { }, [1] = 23038, [2] = 19432, [3] = 17063, [4] = 19384, [5] = 21596, [6] = 19325 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][12] = { ["slot_name"] = "Trinket", ["enhs"] = { }, [1] = 22954, [2] = 20130, [3] = 21180, [4] = 19406, [5] = 11815, [6] = -1 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][13] = { ["slot_name"] = "Weapon", ["enhs"] = { { ["type"] = "spell", ["id"] = 20034 } }, [1] = 19019, [2] = 23054, [3] = 22816, [4] = 19352, [5] = 19363, [6] = 19866 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][14] = { ["slot_name"] = "Off hand", ["enhs"] = { { ["type"] = "spell", ["id"] = 20017 } }, [1] = 23043, [2] = 22818, [3] = 19349, [4] = 21269, [5] = 21485, [6] = 19862 }
+Bistooltip_classic_bislists["Warrior"]["Fury-Prot"]["P6"][15] = { ["slot_name"] = "Relic", ["enhs"] = { { ["type"] = "item", ["id"] = 10548 } }, [1] = 22812, [2] = 21459, [3] = 17069, [4] = 22811, [5] = 23557, [6] = 22347 }
