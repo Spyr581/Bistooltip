@@ -26,6 +26,45 @@ local boemarks = {}
 
 local isHorde = UnitFactionGroup("player") == "Horde"
 
+-- Target equipment scanning
+local targetEquipment = {}
+
+-- Forward decls for functions used before definition
+local isAutoTrackEnabled
+
+local function scanTargetEquipment()
+    targetEquipment = {}
+    if not UnitExists("target") or not UnitIsPlayer("target") then
+        return
+    end
+    if CanInspect("target") then
+        NotifyInspect("target")
+    end
+    for i = 1, 19 do
+        local itemID = GetInventoryItemID("target", i)
+        if itemID and itemID > 0 then
+            targetEquipment[itemID] = true
+        end
+    end
+end
+
+local function hasItemInEquipment(item_id)
+    -- If tracking is on, only show target's equipment
+    if isAutoTrackEnabled() then
+        return targetEquipment[item_id] == true
+    end
+    -- Tracking off: show player's equipment
+    if Bistooltip_char_equipment and Bistooltip_char_equipment[item_id] then
+        return true
+    end
+    return false
+end
+
+-- Target auto-tracking (moved after function definitions)
+local manualMode = false
+local trackedTarget = nil
+local programmaticChange = false
+
 local function createItemFrame(item_id, size, with_checkmark)
     if item_id < 0 then
         return AceGUI:Create("Label")
@@ -177,8 +216,8 @@ local function drawItemSlot(slot)
             end
         end
 
-        -- Check if the item_id is valid and exists in Bistooltip_char_equipment
-        if item_id and Bistooltip_char_equipment and Bistooltip_char_equipment[item_id] then
+        -- Check if the item_id is valid and exists in player/target equipment
+        if item_id and hasItemInEquipment(item_id) then
             spec_frame:AddChild(createItemFrame(item_id, 40, true))
         else
             spec_frame:AddChild(createItemFrame(item_id, 40))
@@ -286,6 +325,75 @@ local function loadData()
     end
 end
 
+-- Target auto-tracking variables
+local manualMode = false
+local trackedTarget = nil
+local programmaticChange = false
+
+-- Auto-track: read/write directly from saved variable
+isAutoTrackEnabled = function()
+    return BistooltipAddon.db.char.autoTrackEnabled == true
+end
+
+local targetWatcher = CreateFrame("Frame")
+targetWatcher:RegisterEvent("PLAYER_TARGET_CHANGED")
+
+local function updateForTarget()
+    if not main_frame then return end
+    if not UnitExists("target") or not UnitIsPlayer("target") then return end
+    
+    local _, targetClassFile = UnitClass("target")
+    if not targetClassFile then return end
+    
+    local tokenToName = {}
+    for _, bcd in ipairs(Bistooltip_classes) do
+        local token = string.upper(bcd.name)
+        token = string.gsub(token, " ", "")
+        tokenToName[token] = bcd.name
+    end
+    
+    local className = tokenToName[targetClassFile]
+    if not className then return end
+    
+    local newClassIndex = nil
+    for i, opt in ipairs(class_options) do
+        if opt == className then newClassIndex = i; break end
+    end
+    if not newClassIndex then return end
+    
+    trackedTarget = UnitGUID("target")
+    scanTargetEquipment()
+    
+    class_index = newClassIndex
+    class = className
+    buildSpecsDict(newClassIndex)
+    spec_index = 1
+    spec = spec_options_to_spec[spec_options[1]]
+    
+    programmaticChange = true
+    classDropdown:SetValue(newClassIndex)
+    specDropdown:SetList(spec_options)
+    specDropdown:SetDisabled(false)
+    specDropdown:SetValue(1)
+    programmaticChange = false
+    
+    drawSpecData()
+end
+
+targetWatcher:SetScript("OnEvent", function(self, event, ...)
+    if not isAutoTrackEnabled() then return end
+    if not main_frame then return end
+    if not UnitExists("target") or not UnitIsPlayer("target") then
+        trackedTarget = nil
+        return
+    end
+    local guid = UnitGUID("target")
+    if manualMode and trackedTarget and guid == trackedTarget then return end
+    manualMode = false
+    trackedTarget = guid
+    updateForTarget()
+end)
+
 local function drawDropdowns()
     local dropDownGroup = AceGUI:Create("SimpleGroup")
 
@@ -303,18 +411,21 @@ local function drawDropdowns()
     specDropdown:SetDisabled(true)
 
     phaseDropDown:SetCallback("OnValueChanged", function(_, _, key)
+        if not programmaticChange then manualMode = true end
         phase_index = key
         phase = Bistooltip_phases[key]
         drawSpecData()
     end)
 
     specDropdown:SetCallback("OnValueChanged", function(_, _, key)
+        if not programmaticChange then manualMode = true end
         spec_index = key
         spec = spec_options_to_spec[spec_options[key]]
         drawSpecData()
     end)
 
     classDropdown:SetCallback("OnValueChanged", function(_, _, key)
+        if not programmaticChange then manualMode = true end
         class_index = key
         class = class_options_to_class[class_options[key]].name
 
@@ -373,7 +484,7 @@ local function createSpecFrame()
         align = "middle"
     })
     frame:SetFullWidth(true)
-    frame:SetHeight(370)
+    frame:SetHeight(390)
     frame:SetAutoAdjustHeight(false)
     main_frame:AddChild(frame)
     spec_frame = frame
@@ -400,7 +511,6 @@ function BistooltipAddon:reloadData()
         phaseDropDown:SetValue(phase_index)
 
         drawSpecData()
-        main_frame:SetStatusText(Bistooltip_source_to_url[BistooltipAddon.db.char["data_source"]])
     end
 end
 
@@ -458,7 +568,7 @@ function BistooltipAddon:createMainFrame()
 
     main_frame = AceGUI:Create("Frame")
     main_frame:SetWidth(450)
-    main_frame:SetHeight(550) -- Adjust the height here as needed
+    main_frame:SetHeight(550)
     main_frame.frame:SetMinResize(450, 300)
     main_frame.frame:SetMaxResize(800, 600)
 
@@ -473,69 +583,142 @@ function BistooltipAddon:createMainFrame()
     end)
     main_frame:SetLayout("List")
     main_frame:SetTitle(BistooltipAddon.AddonNameAndVersion)
-    main_frame:SetStatusText(Bistooltip_source_to_url[BistooltipAddon.db.char["data_source"]])
 
     drawDropdowns()
     createSpecFrame()
     drawSpecData()
+    
+    -- Auto-detect target on window open (if tracking enabled)
+    if isAutoTrackEnabled() and UnitExists("target") and UnitIsPlayer("target") then
+        updateForTarget()
+    end
 
-    -- Create a container to hold the button and the note label
+    -- Replace the status bar with our source dropdown
+    -- Hide built-in status background
+    local children = {main_frame.frame:GetChildren()}
+    for _, child in ipairs(children) do
+        if child:GetObjectType() == "Button" and child:GetBackdrop() then
+            child:Hide()
+        end
+    end
+    -- Hide status text
+    if main_frame.statustext then
+        main_frame.statustext:Hide()
+    end
+
+    -- Source selector (placed where status bar was)
+    local sourceRow = AceGUI:Create("SimpleGroup")
+    sourceRow:SetFullWidth(true)
+    sourceRow:SetLayout("Flow")
+
+    local sourceLabel = AceGUI:Create("Label")
+    sourceLabel:SetText("Data source:")
+    sourceLabel:SetWidth(75)
+    sourceLabel:SetFont(GameFontNormal:GetFont(), 11)
+    sourceRow:AddChild(sourceLabel)
+
+    local sourceDropdown = AceGUI:Create("Dropdown")
+    sourceDropdown:SetList(Bistooltip_source_to_url)
+    sourceDropdown:SetValue(BistooltipAddon.db.char["data_source"])
+    sourceDropdown:SetWidth(160)
+    sourceDropdown:SetCallback("OnValueChanged", function(_, _, key)
+        if key ~= BistooltipAddon.db.char["data_source"] then
+            local savedClass = class_index
+            local savedSpec = spec_index
+            BistooltipAddon:changeSpec(key)
+            if savedClass and class_options[savedClass] then
+                class_index = savedClass
+                class = class_options_to_class[class_options[class_index]].name
+                buildSpecsDict(class_index)
+                if savedSpec and spec_options[savedSpec] then
+                    spec_index = savedSpec
+                    spec = spec_options_to_spec[spec_options[savedSpec]]
+                else
+                    spec_index = 1
+                    spec = spec_options_to_spec[spec_options[1]]
+                end
+                phase_index = 1
+                phase = Bistooltip_phases[1]
+                BistooltipAddon.db.char.class_index = class_index
+                BistooltipAddon.db.char.spec_index = spec_index
+                BistooltipAddon.db.char.phase_index = 1
+                BistooltipAddon.db.char.data_source = key
+                enableSpec(key)
+                if main_frame then
+                    classDropdown:SetList(class_options)
+                    classDropdown:SetValue(class_index)
+                    specDropdown:SetList(spec_options)
+                    specDropdown:SetValue(spec_index)
+                    phaseDropDown:SetList(Bistooltip_phases)
+                    phaseDropDown:SetValue(1)
+                    drawSpecData()
+                end
+            end
+        end
+    end)
+    sourceRow:AddChild(sourceDropdown)
+
+    -- Buttons row
     local buttonContainer = AceGUI:Create("SimpleGroup")
     buttonContainer:SetFullWidth(true)
     buttonContainer:SetLayout("Flow")
 
-    -- Create the reload button
     local reloadButton = AceGUI:Create("Button")
     reloadButton:SetText("Reload Data")
-    reloadButton:SetWidth(120) -- Set a reasonable width for the button
+    reloadButton:SetWidth(120)
     reloadButton:SetCallback("OnClick", function()
         BistooltipAddon:reloadData()
     end)
-
-    -- Add the button to the container first
     buttonContainer:AddChild(reloadButton)
 
-    -- Create the Discord button
-    local discordButton = AceGUI:Create("Button")
-    discordButton:SetText("Join our Discord")
-    discordButton:SetWidth(140)
-    discordButton:SetCallback("OnClick", function()
-        BistooltipAddon:OpenDiscordLink()
+    -- Auto-track checkbox (replaces Discord button)
+    local trackCheck = AceGUI:Create("CheckBox")
+    trackCheck:SetLabel("Auto-track target")
+    trackCheck:SetValue(isAutoTrackEnabled())
+    trackCheck:SetCallback("OnValueChanged", function(_, _, val)
+        BistooltipAddon.db.char.autoTrackEnabled = val
+        if val and UnitExists("target") and UnitIsPlayer("target") then
+            trackedTarget = UnitGUID("target")
+            scanTargetEquipment()
+            updateForTarget()
+        else
+            trackedTarget = nil
+        end
     end)
-    buttonContainer:AddChild(discordButton)
+    trackCheck:SetWidth(140)
+    buttonContainer:AddChild(trackCheck)
 
-    -- Create the note label
+    -- Show item sources checkbox (next to Auto-track)
+    local sourcesCheck = AceGUI:Create("CheckBox")
+    sourcesCheck:SetLabel("Who uses this")
+    sourcesCheck:SetValue(BistooltipAddon.db.char.show_item_sources ~= false)
+    sourcesCheck:SetCallback("OnValueChanged", function(_, _, val)
+        BistooltipAddon.db.char.show_item_sources = val
+    end)
+    sourcesCheck:SetWidth(140)
+    buttonContainer:AddChild(sourcesCheck)
+
     local noteLabel = AceGUI:Create("Label")
     noteLabel:SetText("Sometimes servers don't allow to query too many items so keep reloading and reopening the addon.")
-    noteLabel:SetWidth(250) -- Adjust width to fit the note text
-
-    -- Set font size and font type
+    noteLabel:SetWidth(250)
     noteLabel:SetFont(GameFontNormal:GetFont(), 9)
-
-    -- Create a spacer label to act as left margin
-    local spacerLabel = AceGUI:Create("Label")
-    spacerLabel:SetWidth(20) -- This sets the margin between button and label
-    buttonContainer:AddChild(spacerLabel)
-
-    -- Add the note label to the container
-    buttonContainer:AddChild(noteLabel)
-
-    -- Set the height of the noteLabel and align its text to the bottom
     noteLabel:SetHeight(reloadButton.frame:GetHeight())
     noteLabel:SetFullWidth(false)
-    -- noteLabel:SetJustifyH("LEFT")
-
-    -- Adjust the noteLabel's text frame to position it at the bottom
     noteLabel.label:SetPoint("BOTTOM")
 
-    -- Add some space before the container to ensure it's at the bottom
-    local spacer = AceGUI:Create("Label")
-    spacer:SetFullWidth(true)
-    spacer:SetText(" ")
+    local spacerLabel = AceGUI:Create("Label")
+    spacerLabel:SetWidth(20)
+    buttonContainer:AddChild(spacerLabel)
+    buttonContainer:AddChild(noteLabel)
 
-    -- Add the spacer and button container to the main frame
-    main_frame:AddChild(spacer)
-    main_frame:AddChild(buttonContainer)
+    -- Wrap buttons+note and Data source together to reduce gap
+    local bottomGroup = AceGUI:Create("SimpleGroup")
+    bottomGroup:SetFullWidth(true)
+    bottomGroup:SetLayout("List")
+    bottomGroup:AddChild(buttonContainer)
+    bottomGroup:AddChild(sourceRow)
+
+    main_frame:AddChild(bottomGroup)
 end
 
 function BistooltipAddon:closeMainFrame()
@@ -553,5 +736,17 @@ function BistooltipAddon:initBislists()
     loadData()
     LibStub("AceConsole-3.0"):RegisterChatCommand("bistooltip", function()
         BistooltipAddon:createMainFrame()
+    end, persist)
+    LibStub("AceConsole-3.0"):RegisterChatCommand("bistbc", function()
+        BistooltipAddon:changeSpec("tbc")
+        print("|cFF00FF00[Bis-Tooltip]|r Switched to TBC data")
+    end, persist)
+    LibStub("AceConsole-3.0"):RegisterChatCommand("biswotlk", function()
+        BistooltipAddon:changeSpec("wowtbc")
+        print("|cFF00FF00[Bis-Tooltip]|r Switched to WotLK data")
+    end, persist)
+    LibStub("AceConsole-3.0"):RegisterChatCommand("bisclassic", function()
+        BistooltipAddon:changeSpec("classic")
+        print("|cFF00FF00[Bis-Tooltip]|r Switched to Classic data")
     end, persist)
 end

@@ -98,7 +98,7 @@ end
 function BistooltipAddon:OnInitialize()
     createEquipmentWatcher()
     BistooltipAddon.AceAddonName = "Bis-Tooltip"
-    BistooltipAddon.AddonNameAndVersion = "Bis-Tooltip 3.3.5a backport by Silver [DisruptionAuras]"
+    BistooltipAddon.AddonNameAndVersion = "Bis-Tooltip 3.3.5a — all expansions"
     BistooltipAddon:initConfig()
     BistooltipAddon:addMapIcon()
     BistooltipAddon:initBislists()

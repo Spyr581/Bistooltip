@@ -63,7 +63,7 @@ function searchIDInBislistsClassSpec(structure, id, class, spec)
 
     -- Sort phases according to Bistooltip_wowtbc_phases order
     local sortedPhases = {}
-    for _, phase in ipairs(Bistooltip_wowtbc_phases) do
+    for _, phase in ipairs(Bistooltip_phases) do
         if structure[class] and structure[class][spec] and structure[class][spec][phase] then
             table.insert(sortedPhases, phase)
         end
@@ -212,6 +212,7 @@ local function OnGameTooltipSetItem(tooltip)
     -- tooltip:AddDoubleLine("Spec Name", "Phase", 1, 1, 1, 1, 1, 1)
 
     -- -- Iterate through each class and specialization
+    if BistooltipAddon.db.char.show_item_sources ~= false then
     for class, specs in caseInsensitivePairs(Bistooltip_spec_icons) do
         for spec, icon in pairs(specs) do
             -- Skip the 'classIcon' entry
@@ -232,6 +233,7 @@ local function OnGameTooltipSetItem(tooltip)
                 end
             end
         end
+    end
     end
 
     -- if Bistooltip_char_equipment and Bistooltip_char_equipment[itemId] ~= nil then

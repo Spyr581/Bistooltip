@@ -8,11 +8,15 @@ local icon_name = "BisTooltipIcon"
 -- local DataStore_Inventory = LibStub("DataStore_Inventory")
 
 local sources = {
-    wowtbc = "wowtbc"
+    wowtbc = "wowtbc",
+    tbc = "tbc",
+    classic = "classic"
 }
 
 Bistooltip_source_to_url = {
-    ["wowtbc"] = "wowtbc.gg/wotlk"
+    ["wowtbc"] = "wowtbc.gg/wotlk",
+    ["tbc"] = "wowtbc.gg/tbc",
+    ["classic"] = "wowtbc.gg/classic"
 }
 
 local db_defaults = {
@@ -24,7 +28,8 @@ local db_defaults = {
         highlight_spec = {},
         data_source = nil,
         minimap_icon = true,
-        tooltip_with_ctrl = false
+        tooltip_with_ctrl = false,
+        show_item_sources = true
     }
 }
 
@@ -244,6 +249,16 @@ local function enableSpec(spec_name)
         Bistooltip_items = Bistooltip_wowtbc_items
         Bistooltip_classes = Bistooltip_wowtbc_classes
         Bistooltip_phases = Bistooltip_wowtbc_phases
+    elseif spec_name == sources.tbc then
+        Bistooltip_bislists = Bistooltip_tbc_bislists
+        Bistooltip_items = {}
+        Bistooltip_classes = Bistooltip_tbc_classes
+        Bistooltip_phases = Bistooltip_tbc_phases
+    elseif spec_name == sources.classic then
+        Bistooltip_bislists = Bistooltip_classic_bislists
+        Bistooltip_items = {}
+        Bistooltip_classes = Bistooltip_classic_classes
+        Bistooltip_phases = Bistooltip_classic_phases
     else
         -- Handle unexpected spec_name
         return

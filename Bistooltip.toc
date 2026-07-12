@@ -26,6 +26,8 @@ Bistooltip_classes.lua
 Bistooltip_wowtbc_bislists.lua
 #Bistooltip_wowtbc_items_old.lua
 Bistooltip_wowtbc_bislists_old.lua
+Bistooltip_tbc_bislists.lua
+Bistooltip_classic_bislists.lua
 #Bistooltip_wh_items.lua
 #Bistooltip_wh_bislists.lua
 #Bistooltip_wh_items_old.lua
