@@ -22,15 +22,9 @@ Libs\LibDBIcon-1.0\LibDBIcon-1.0.lua
 
 Loot_Sources.lua
 Bistooltip_classes.lua
-#Bistooltip_wowtbc_items.lua
-Bistooltip_wowtbc_bislists.lua
-#Bistooltip_wowtbc_items_old.lua
+Bistooltip_wotlk_bislists.lua
 Bistooltip_tbc_bislists.lua
 Bistooltip_classic_bislists.lua
-#Bistooltip_wh_items.lua
-#Bistooltip_wh_bislists.lua
-#Bistooltip_wh_items_old.lua
-#Bistooltip_wh_bislists_old.lua
 Bistooltip_horde_to_ali.lua
 Core.lua
 Config.lua

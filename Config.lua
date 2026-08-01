@@ -245,7 +245,7 @@ end
 
 local function enableSpec(spec_name)
     if spec_name == sources.wowtbc then
-        Bistooltip_bislists = Bistooltip_wowtbc_bislists
+        Bistooltip_bislists = Bistooltip_wotlk_bislists
         Bistooltip_items = Bistooltip_wowtbc_items
         Bistooltip_classes = Bistooltip_wowtbc_classes
         Bistooltip_phases = Bistooltip_wowtbc_phases
