@@ -26,6 +26,82 @@ local boemarks = {}
 
 local isHorde = UnitFactionGroup("player") == "Horde"
 
+-- Auto-detect the character's class/spec from talents (3.3.5a)
+local playerClassFile = select(2, UnitClass("player"))
+
+local CLASS_TOKEN_TO_NAME = {
+    DEATHKNIGHT = "Death knight",
+    DRUID = "Druid",
+    HUNTER = "Hunter",
+    MAGE = "Mage",
+    PALADIN = "Paladin",
+    PRIEST = "Priest",
+    ROGUE = "Rogue",
+    SHAMAN = "Shaman",
+    WARLOCK = "Warlock",
+    WARRIOR = "Warrior",
+}
+
+local playerClassName = CLASS_TOKEN_TO_NAME[playerClassFile]
+
+-- Talent tab -> addon spec name. Feral tank/dps share tab 2, so Feral dps is the default there.
+local SPEC_BY_TAB = {
+    ["Death knight"] = { [1] = "Blood tank", [2] = "Frost", [3] = "Unholy" },
+    ["Druid"]        = { [1] = "Balance", [2] = "Feral dps", [3] = "Restoration" },
+    ["Hunter"]       = { [1] = "Beast mastery", [2] = "Marksmanship", [3] = "Survival" },
+    ["Mage"]         = { [1] = "Arcane", [2] = "Fire", [3] = "Frost" },
+    ["Paladin"]      = { [1] = "Holy", [2] = "Protection", [3] = "Retribution" },
+    ["Priest"]       = { [1] = "Discipline", [2] = "Holy", [3] = "Shadow" },
+    ["Rogue"]        = { [1] = "Assassination", [2] = "Combat", [3] = "Subtlety" },
+    ["Shaman"]       = { [1] = "Elemental", [2] = "Enhancement", [3] = "Restoration" },
+    ["Warlock"]      = { [1] = "Affliction", [2] = "Demonology", [3] = "Destruction" },
+    ["Warrior"]      = { [1] = "Arms", [2] = "Fury", [3] = "Protection" },
+}
+
+-- Points spent in a talent tab. pcall'd: a client quirk must never break the window.
+-- GetTalentTabInfo(tab) -> (name, desc, icon, pointsSpent, background, ...) in 3.3.5
+local function talentPoints(tabIndex, inspect)
+    local ok, _, _, points = pcall(GetTalentTabInfo, tabIndex, inspect)
+    if not ok or type(points) ~= "number" then return nil end
+    return points
+end
+
+-- Talent tab with the most points = current spec (inspect: last inspected unit)
+local function detectSpecTab(inspect)
+    local bestTab, bestPoints = nil, 0
+    for t = 1, GetNumTalentTabs() or 0 do
+        local points = talentPoints(t, inspect)
+        if points and points > bestPoints then
+            bestTab, bestPoints = t, points
+        end
+    end
+    return bestTab
+end
+
+-- Spec index in the current source's list for a class + talent tab, or nil
+local function specIndexForTab(classIndex, tabIndex)
+    if not tabIndex then return nil end
+    if type(Bistooltip_classes) ~= "table" then return nil end
+    local cls = Bistooltip_classes[classIndex]
+    if not cls then return nil end
+    local specName = SPEC_BY_TAB[cls.name] and SPEC_BY_TAB[cls.name][tabIndex]
+    if not specName then return nil end
+    for si, s in ipairs(cls.specs) do
+        if s == specName then return si end
+    end
+    return nil
+end
+
+-- Class index in the current source's list for the player, or nil
+local function detectPlayerClassIndex()
+    if not playerClassName then return nil end
+    if type(Bistooltip_classes) ~= "table" then return nil end
+    for ci, cls in ipairs(Bistooltip_classes) do
+        if cls.name == playerClassName then return ci end
+    end
+    return nil
+end
+
 -- Target equipment scanning
 local targetEquipment = {}
 
@@ -272,7 +348,11 @@ local function drawSpecData()
     if not spec or not phase then
         return
     end
-    local slots = Bistooltip_bislists[class][spec][phase]
+    local classData = Bistooltip_bislists[class]
+    local slots = classData and classData[spec] and classData[spec][phase]
+    if not slots then
+        return
+    end
     for i, slot in ipairs(slots) do
         drawItemSlot(slot)
     end
@@ -328,6 +408,7 @@ end
 -- Target auto-tracking variables
 local manualMode = false
 local trackedTarget = nil
+local inspectTargetGUID = nil
 local programmaticChange = false
 
 -- Auto-track: read/write directly from saved variable
@@ -363,6 +444,9 @@ local function updateForTarget()
     
     trackedTarget = UnitGUID("target")
     scanTargetEquipment()
+    if CanInspect("target") then
+        inspectTargetGUID = trackedTarget
+    end
     
     class_index = newClassIndex
     class = className
@@ -392,6 +476,24 @@ targetWatcher:SetScript("OnEvent", function(self, event, ...)
     manualMode = false
     trackedTarget = guid
     updateForTarget()
+end)
+
+-- Apply the tracked target's spec once talent inspect data arrives
+local inspectFrame = CreateFrame("Frame")
+inspectFrame:RegisterEvent("INSPECT_TALENT_READY")
+inspectFrame:SetScript("OnEvent", function()
+    if not main_frame or not inspectTargetGUID then return end
+    if trackedTarget ~= inspectTargetGUID then return end
+    if not UnitExists("target") or UnitGUID("target") ~= trackedTarget then return end
+    inspectTargetGUID = nil
+    local detectedSpec = specIndexForTab(class_index, detectSpecTab(true))
+    if not detectedSpec or detectedSpec == spec_index then return end
+    programmaticChange = true
+    spec_index = detectedSpec
+    spec = spec_options_to_spec[spec_options[detectedSpec]]
+    specDropdown:SetValue(detectedSpec)
+    programmaticChange = false
+    drawSpecData()
 end)
 
 local function drawDropdowns()
@@ -432,9 +534,13 @@ local function drawDropdowns()
         specDropdown:SetDisabled(false)
         buildSpecsDict(key)
         specDropdown:SetList(spec_options)
-        specDropdown:SetValue(1)
-        spec_index = 1
-        spec = spec_options_to_spec[spec_options[1]]
+        local newSpecIndex = 1
+        if class == playerClassName then
+            newSpecIndex = specIndexForTab(key, detectSpecTab(false)) or 1
+        end
+        specDropdown:SetValue(newSpecIndex)
+        spec_index = newSpecIndex
+        spec = spec_options_to_spec[spec_options[newSpecIndex]]
         drawSpecData()
     end)
 
@@ -587,6 +693,21 @@ function BistooltipAddon:createMainFrame()
     drawDropdowns()
     createSpecFrame()
     drawSpecData()
+
+    -- Auto-select the character's class+spec from their talents
+    local detectedClassIndex = detectPlayerClassIndex()
+    if detectedClassIndex then
+        class_index = detectedClassIndex
+        class = class_options_to_class[class_options[class_index]].name
+        buildSpecsDict(class_index)
+        spec_index = specIndexForTab(class_index, detectSpecTab(false)) or 1
+        spec = spec_options_to_spec[spec_options[spec_index]]
+        classDropdown:SetValue(class_index)
+        specDropdown:SetList(spec_options)
+        specDropdown:SetDisabled(false)
+        specDropdown:SetValue(spec_index)
+        drawSpecData()
+    end
     
     -- Auto-detect target on window open (if tracking enabled)
     if isAutoTrackEnabled() and UnitExists("target") and UnitIsPlayer("target") then
