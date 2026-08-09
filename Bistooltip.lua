@@ -50,11 +50,11 @@ local function printClassName(tooltip, class_name)
     tooltip:AddLine(class_name, 1, 0.8, 0)
 end
 
-function searchIDInBislistsClassSpec(structure, id, class, spec)
+function searchIDInBislistsClassSpec(structure, phases, id, class, spec)
     local paths = {}
     local seen = {}
     local sortedPhases = {}
-    for _, phase in ipairs(Bistooltip_phases) do
+    for _, phase in ipairs(phases) do
         if structure[class] and structure[class][spec] and structure[class][spec][phase] then
             table.insert(sortedPhases, phase)
         end
@@ -203,14 +203,29 @@ local function OnGameTooltipSetItem(tooltip)
     Bistooltip_LastLink = link
 
     if BistooltipAddon.db.char.show_item_sources ~= false then
+        -- Ищем предмет во ВСЕХ бислистах, независимо от выбранного аддона
+        local allBisSources = {
+            { Bistooltip_wotlk_bislists,   Bistooltip_wowtbc_phases },
+            { Bistooltip_tbc_bislists,     Bistooltip_tbc_phases },
+            { Bistooltip_classic_bislists, Bistooltip_classic_phases },
+        }
         for class, specs in caseInsensitivePairs(Bistooltip_spec_icons) do
             for spec, icon in pairs(specs) do
                 if spec ~= "classIcon" then
-                    local foundPhases = searchIDInBislistsClassSpec(Bistooltip_bislists, itemId, class, spec)
-                    if foundPhases then
+                    local foundPhases = {}
+                    for _, bisSource in ipairs(allBisSources) do
+                        local structure, phases = bisSource[1], bisSource[2]
+                        if structure and phases then
+                            local found = searchIDInBislistsClassSpec(structure, phases, itemId, class, spec)
+                            if found then
+                                table.insert(foundPhases, found)
+                            end
+                        end
+                    end
+                    if #foundPhases > 0 then
                         local iconString = string.format("|T%s:18|t", icon)
                         local lineText = string.format("%s %s - %s", iconString, class, spec)
-                        tooltip:AddDoubleLine(lineText, foundPhases, 1, 1, 0, 1, 1, 0)
+                        tooltip:AddDoubleLine(lineText, table.concat(foundPhases, " / "), 1, 1, 0, 1, 1, 0)
                     end
                 end
             end
