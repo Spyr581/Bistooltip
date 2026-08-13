@@ -59,11 +59,31 @@ local SPEC_BY_TAB = {
 }
 
 -- Points spent in a talent tab. pcall'd: a client quirk must never break the window.
--- GetTalentTabInfo(tab) -> (name, desc, icon, pointsSpent, background, ...) in 3.3.5
+-- GetTalentTabInfo(tab[, inspect[, isPet]][, talentGroup]) in 3.3.5.
+-- Quirk: inspecting WITHOUT talentGroup reads the target's slot matching YOUR
+-- active slot. With your slot 2 active and a bot (mod-playerbots) that only has
+-- slot 1, the bot's empty slot 2 is read and no spec is detected. Hence we read
+-- the inspected unit's ACTIVE slot via GetActiveTalentGroup(true).
+-- Points: first number <= 100 among the returns (tab points 0..71, tab ids 160+).
 local function talentPoints(tabIndex, inspect)
-    local ok, _, _, points = pcall(GetTalentTabInfo, tabIndex, inspect)
-    if not ok or type(points) ~= "number" then return nil end
-    return points
+    local ok, r1, r2, r3, r4, r5, r6, r7, r8
+    if inspect then
+        -- Active talent group of the inspected unit; fallback to slot 1
+        -- (mod-playerbots characters have only slot 1).
+        local okg, group = pcall(GetActiveTalentGroup, true)
+        if okg and type(group) == "number" then
+            ok, r1, r2, r3, r4, r5, r6, r7, r8 = pcall(GetTalentTabInfo, tabIndex, true, false, group)
+        else
+            ok, r1, r2, r3, r4, r5, r6, r7, r8 = pcall(GetTalentTabInfo, tabIndex, true, false, 1)
+        end
+    else
+        ok, r1, r2, r3, r4, r5, r6, r7, r8 = pcall(GetTalentTabInfo, tabIndex, false)
+    end
+    if not ok then return nil end
+    for _, v in ipairs({ r1, r2, r3, r4, r5, r6, r7, r8 }) do
+        if type(v) == "number" and v <= 100 then return v end
+    end
+    return nil
 end
 
 -- Talent tab with the most points = current spec (inspect: last inspected unit)
@@ -113,9 +133,10 @@ local function scanTargetEquipment()
     if not UnitExists("target") or not UnitIsPlayer("target") then
         return
     end
-    if CanInspect("target") then
-        NotifyInspect("target")
-    end
+    -- Always send the inspect request, not only when CanInspect: CanInspect
+    -- returns false at range (and for bots), leaving the target's spec stuck at
+    -- the player's own spec index. The server decides whether to answer.
+    pcall(NotifyInspect, "target")
     for i = 1, 19 do
         local itemID = GetInventoryItemID("target", i)
         if itemID and itemID > 0 then
@@ -451,14 +472,20 @@ local function updateForTarget()
     class_index = newClassIndex
     class = className
     buildSpecsDict(newClassIndex)
-    spec_index = 1
-    spec = spec_options_to_spec[spec_options[1]]
+    -- Do not reset the spec to the first one on target change: the talent
+    -- inspection (INSPECT_TALENT_READY) only fires within inspect range, and
+    -- resetting would always leave the first spec. Clamp only when the current
+    -- index is out of range for the new class's spec list.
+    if not spec_options[spec_index] then
+        spec_index = 1
+    end
+    spec = spec_options_to_spec[spec_options[spec_index]]
     
     programmaticChange = true
     classDropdown:SetValue(newClassIndex)
     specDropdown:SetList(spec_options)
     specDropdown:SetDisabled(false)
-    specDropdown:SetValue(1)
+    specDropdown:SetValue(spec_index)
     programmaticChange = false
     
     drawSpecData()
@@ -486,6 +513,8 @@ inspectFrame:SetScript("OnEvent", function()
     if trackedTarget ~= inspectTargetGUID then return end
     if not UnitExists("target") or UnitGUID("target") ~= trackedTarget then return end
     inspectTargetGUID = nil
+    -- talentPoints reads the target's active group itself (GetActiveTalentGroup(true));
+    -- no need to distinguish self from bots
     local detectedSpec = specIndexForTab(class_index, detectSpecTab(true))
     if not detectedSpec or detectedSpec == spec_index then return end
     programmaticChange = true

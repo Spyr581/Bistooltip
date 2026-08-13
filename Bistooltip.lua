@@ -203,7 +203,7 @@ local function OnGameTooltipSetItem(tooltip)
     Bistooltip_LastLink = link
 
     if BistooltipAddon.db.char.show_item_sources ~= false then
-        -- Ищем предмет во ВСЕХ бислистах, независимо от выбранного аддона
+        -- Search all bislists regardless of the selected addon
         local allBisSources = {
             { Bistooltip_wotlk_bislists,   Bistooltip_wowtbc_phases },
             { Bistooltip_tbc_bislists,     Bistooltip_tbc_phases },
